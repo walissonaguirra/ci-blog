@@ -49,7 +49,7 @@ class News extends Model
      *
      * @return array|null
      */
-    public function getNews(string $slug = false)
+    public function getNews($slug = false)
     {
         if ($slug == false) {
             return $this->findAll();
