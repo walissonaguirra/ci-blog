@@ -10,19 +10,28 @@ class CreateNewsTable extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'int',
-                'auto_increment' => true
+                'type'            => 'INT',
+                'constraint'      => 11,
+                'unsigned'        => true,
+                'auto_increments' => true
             ],
             'title' => [
-                'type' => 'varchar',
+                'type'       => 'VARCHAR',
                 'constraint' => 128
             ],
             'slug' => [
-                'type' => 'varchar',
+                'type'       => 'VARCHAR',
                 'constraint' => 128,
             ],
             'body' => [
-                'type' => 'text'
+                'type'       => 'TEXT',
+                'constraint' => 500
+            ],
+            'created_at' => [
+                'type' => 'DATETIME'
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME'
             ]
         ]);
 
