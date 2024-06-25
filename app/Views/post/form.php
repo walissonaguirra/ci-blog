@@ -7,7 +7,10 @@
 		</div>
 
 		<?= validation_list_errors() ?>
-		<?= form_open('/posts') ?>
+		<?= form_open_multipart('/posts') ?>
+			<div class="mb-3">
+				<input class="btn bg-light border" id="thumbnail" type="file" name="thumbnail" size="20" />
+			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Título</label>

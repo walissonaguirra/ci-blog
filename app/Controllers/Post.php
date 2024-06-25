@@ -40,6 +40,16 @@ class Post extends BaseController
             'content'  => [
                 'label' => 'Conteúdo',
                 'rules' => 'required|max_length[255]|min_length[10]'
+            ],
+            'thumbnail' => [
+                'label' => 'Imagem',
+                'rules' => [
+                    'uploaded[thumbnail]',
+                    'is_image[thumbnail]',
+                    'mime_in[thumbnail,image/jpg,image/jpeg,image/gif,image/png,image/webp]',
+                    'max_size[thumbnail,100]',
+                    'max_dims[thumbnail,1024,768]',
+                ],
             ]
         ];
 
@@ -50,6 +60,11 @@ class Post extends BaseController
         }
 
         $data = (object) $this->validator->getValidated();
+        $image = $this->request->getFile('thumbnail');
+
+        if (!$image->hasMoved()) {
+            $image->store();
+        }
 
         $post = new PostModel();
         $post->save([
