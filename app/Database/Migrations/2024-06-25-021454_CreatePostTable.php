@@ -15,6 +15,11 @@ class CreatePostTable extends Migration
                 'unsigned'        => true,
                 'auto_increment' => true
             ],
+            'image' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true
+            ],
             'title' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 128

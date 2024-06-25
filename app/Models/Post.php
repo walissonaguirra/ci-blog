@@ -13,6 +13,7 @@ class Post extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
+        'image',
         'title',
         'slug',
         'content'

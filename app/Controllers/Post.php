@@ -63,11 +63,12 @@ class Post extends BaseController
         $image = $this->request->getFile('thumbnail');
 
         if (!$image->hasMoved()) {
-            $image->store();
+            $imageUri = 'uploads/' . $image->store();
         }
 
         $post = new PostModel();
         $post->save([
+            'image' => $imageUri,
             'title' => $data->title,
             'slug' => mb_strtolower(mb_url_title($data->title)),
             'content' => $data->content
