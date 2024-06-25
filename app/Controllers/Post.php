@@ -11,13 +11,18 @@ class Post extends BaseController
 {
     public function list()
     {
-        helper('form');
-
         $post = new PostModel();
 
         return view('post/list', [
             'posts' => $post->findAll()
         ]);
+    }
+
+    public function form()
+    {
+        helper('form');
+        
+        return view('post/form');
     }
 
     public function store()
