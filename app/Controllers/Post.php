@@ -9,13 +9,13 @@ use App\Models\Post as PostModel;
 
 class Post extends BaseController
 {
-    public function index()
+    public function list()
     {
         helper('form');
 
         $post = new PostModel();
 
-        return view('post/index', [
+        return view('post/list', [
             'posts' => $post->findAll()
         ]);
     }

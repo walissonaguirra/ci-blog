@@ -6,9 +6,7 @@ use App\Controllers\Post;
 /**
  * @var RouteCollection $routes
  */
-// $routes->get('/', 'Home::index');
-
-$routes->get('posts', [Post::class, 'index']);
+$routes->get('posts', [Post::class, 'list']);
 $routes->post('posts', [Post::class, 'store']);
 $routes->get('posts/(:segment)', [Post::class, 'show']);
 
