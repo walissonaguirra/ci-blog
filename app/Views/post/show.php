@@ -1,8 +1,13 @@
 <?= $this->extend('layout') ?>
 <?= $this->section('content') ?>
-
-	<h3><?= esc($post->title) ?></h3>
-	<p><?= esc($post->content) ?></p>
-	<a href="<?= previous_url() ?>">voltar</a>
+	
+	<div class="container py-2">
+		<div class="mb-2 text-end">
+			<a class="btn btn-light" href="<?= previous_url() ?>"><i class="bi bi-arrow-return-left"></i></a>
+		</div>
+		
+		<h1 class="h2"><?= esc($post->title) ?></h1>
+		<p class="text-secondary h5"><?= esc($post->content) ?></p>
+	</div>
 
 <?= $this->endSection() ?>
