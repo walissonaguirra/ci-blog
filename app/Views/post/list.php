@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+<?= $this->extend('layout') ?>
+<?= $this->section('content') ?>
 
 	<?= validation_list_errors() ?>
 	<?= form_open() ?>
@@ -22,5 +17,5 @@
 		<a href="<?= site_url(uri_string() . "/{$post->slug}") ?>"><?= $post->title ?></a>
 		<br/>
 	<?php endforeach ?>
-</body>
-</html>
+
+<?= $this->endSection() ?>
